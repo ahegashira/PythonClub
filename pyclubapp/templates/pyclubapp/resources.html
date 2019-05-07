@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Resources</h2>
+<table class="table">
+    <tr>
+        <th>Resource Name</th>
+    </tr>
+{% for r in resourcelist %}
+    <tr>
+        <td><a href="{% url 'resourcelist' id=r.id %}">{{r.resourcetitle}}</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
