@@ -4,12 +4,16 @@
 <table class="table">
     <tr>
         <th>Resource Name</th>
+        <th>URL</th>
+        <th>Date Posted</th>
+        <th>Description</th>
     </tr>
-{% for r in resourcelist %}
+    {% for r in resourcelist %}
     <tr>
-        <td><a href="{% url 'resourcelist' id=r.id %}">{{r.resourcetitle}}</a></td>
+        <td><a href ="{% url 'resourcedetails' id=r.id %}"> {{r.resource_name}} </a></td>
+        <td> {{r.resource_url}} </td>
     </tr>
-{% endfor %}
-</table>
+    {% endfor %}
 
+</table>
 {% endblock %}

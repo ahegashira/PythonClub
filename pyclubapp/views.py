@@ -7,8 +7,14 @@ def index(request):
 
 def getResources(request):
     resources_list=Resource.objects.all()
-    context={'resources_list' : resources_list}
-    return render(request, 'pyclubapp/resources.html' , context=context)
+    return render(request, 'pyclubapp/resources.html', {'resources_list' : resources_list})
+
+def resourceDetails(request, id):
+    resource = get_object_or_404(Resource, pk = id)
+    context = {
+        'resource' : resource
+    }
+    return render(request, 'pyclubapp/resourcedetails.html', context=context)
 
 def getMeeting(request):
     meeting_list=Meeting.objects.all()
@@ -17,7 +23,7 @@ def getMeeting(request):
 def meetingDetails(request, id):
     meeting=get_object_or_404(Meeting, pk=id)
     context={
-        'meeting' : meeting,
+       'meeting' : meeting
     }
     return render (request, 'pyclubapp/meetingdetails.html', context=context)
 
