@@ -23,8 +23,8 @@ class ResourceTest(TestCase):
 
 class EventTest(TestCase):
     def test_string(self):
-        even = Event(event_title = "")
-        self.assertEqual(str(even), even.event_title)
+        eventt = Event(event_title = "")
+        self.assertEqual(str(eventt), even.event_title)
 
     def test_table(self):
         self.assertEqual(str(Event._meta.db_table), 'event_title')
