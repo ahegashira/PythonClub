@@ -39,6 +39,7 @@ def logoutmessage(request):
     return render(request, 'pyclubapp/logoutmessage.html')
 
 # ---------- Forms ----------
+
 @login_required
 def newMeeting(request):
     form = MeetingForm
