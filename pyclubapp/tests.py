@@ -16,7 +16,7 @@ class MeetingTest(TestCase):
     def test_table(self):
         self.assertEqual(str(Meeting._meta.db_table), 'meeting')
 
-class ResourceTest(TestCase):
+class ResourcesTest(TestCase):
     def test_string(self):
         reso = Resource(resource_name = "treehouse")
         self.assertEqual(str(reso), reso.resource_name)
@@ -32,19 +32,30 @@ class EventTest(TestCase):
     def test_table(self):
         self.assertEqual(str(Event._meta.db_table), 'event')
 
-class IndexTest(TestCase):
-    def test_view_url_accessible_by_name(self):
-        response = self.client.get(reverse('index'))
-        self.assertEqual(response.status_code, 200)
 
 # ---------- Basic Views Testing ----------
 
-class IndexTest(TestCase):
+class IndexViewTest(TestCase):
     def test_view_url_accessible_by_name(self):
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
 
-class getResourcesTest(TestCase):
+class LoginMessageViewTest(TestCase):
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('loginmessage'))
+        self.assertEqual(response.status_code, 200)
+
+class LogoutMessageViewTest(TestCase):
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('logoutmessage'))
+        self.assertEqual(response.status_code, 200)
+
+class MeetingViewTest(TestCase):
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('meeting'))
+        self.assertEqual(response.status_code, 200)
+
+class ResourcesViewTest(TestCase):
     def test_view_url_accessible_by_name(self):
         response = self.client.get(reverse('resources'))
         self.assertEqual(response.status_code, 200)
