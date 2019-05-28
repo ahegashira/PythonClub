@@ -12,7 +12,7 @@ def getResources(request):
     return render(request, 'pyclubapp/resources.html', {'resources_list' : resources_list})
 
 def resourceDetails(request, id):
-    resource = get_object_or_404(Resource, pk = id)
+    resource = get_object_or_404(Resource, pk=id)
     context = {
         'resource' : resource
     }
